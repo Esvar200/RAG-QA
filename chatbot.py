@@ -10,11 +10,12 @@ import requests
 from bs4 import BeautifulSoup
 
 # Configure Google API Key
-GOOGLE_API_KEY = 'AIzaSyAwlfiHJXlS-vSJ7_2TrEdyW-dDNnQ7oG4'
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # MongoDB Configuration
-client = MongoClient("mongodb+srv://pesvarramkumar:Esvar2040@cluster0.031ktrg.mongodb.net/")  # Adjust MongoDB connection URI as necessary
+abc=st.secrets["client"]
+client = MongoClient(abc)  # Adjust MongoDB connection URI as necessary
 db = client["Vadhandhi"]  # Database name
 collection = db["QA_Embeddings"]  # Collection name
 
